@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="2" y="2" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="20" y="2" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="2" y="20" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="5" y="5" width="4" height="4" fill="currentColor"/>
+          <rect x="23" y="5" width="4" height="4" fill="currentColor"/>
+          <rect x="5" y="23" width="4" height="4" fill="currentColor"/>
+          <rect x="16" y="16" width="4" height="4" fill="currentColor"/>
+          <rect x="22" y="22" width="4" height="4" fill="currentColor"/>
+          <rect x="16" y="22" width="2" height="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <h1>QR Code Generator</h1>
+      <p class="subtitle">Turn any text or link into a scannable QR code in seconds.</p>
+    </header>
+
+    <main class="card">
+      <form id="qr-form" class="form" novalidate>
+        <div class="field">
+          <label for="text-input">Text or URL</label>
+          <textarea
+            id="text-input"
+            rows="3"
+            placeholder="https://example.com or any text you want to encode…"
+            required
+            autofocus
+          ></textarea>
+        </div>
+
+        <div class="options">
+          <div class="field">
+            <label for="size-select">Size</label>
+            <select id="size-select">
+              <option value="200">Small (200px)</option>
+              <option value="280" selected>Medium (280px)</option>
+              <option value="360">Large (360px)</option>
+              <option value="480">Extra large (480px)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="color-input">Color</label>
+            <input type="color" id="color-input" value="#0f172a">
+          </div>
+
+          <div class="field">
+            <label for="bg-input">Background</label>
+            <input type="color" id="bg-input" value="#ffffff">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="generate-btn">
+          Generate QR Code
+        </button>
+      </form>
+
+      <section class="output" id="output-section" hidden>
+        <div class="qr-wrapper">
+          <canvas id="qr-canvas" aria-label="Generated QR code"></canvas>
+        </div>
+        <p class="encoded-text" id="encoded-text"></p>
+        <div class="actions">
+          <button type="button" class="btn btn-secondary" id="download-btn">
+            Download PNG
+          </button>
+          <button type="button" class="btn btn-ghost" id="copy-btn">
+            Copy to clipboard
+          </button>
+        </div>
+      </section>
+
+      <p class="error" id="error-message" role="alert" hidden></p>
+    </main>
+
+    <footer class="footer">
+      <p>Works offline after first load. No data is sent to any server.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
