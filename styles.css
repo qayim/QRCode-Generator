@@ -129,6 +129,45 @@ body {
   gap: 0.875rem;
 }
 
+.field input[type="file"] {
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.field input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.logo-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.logo-preview-row img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.btn-small {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+}
+
 .btn {
   font: inherit;
   font-weight: 600;

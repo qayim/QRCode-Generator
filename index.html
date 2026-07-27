@@ -64,6 +64,21 @@
           </div>
         </div>
 
+        <div class="field">
+          <label for="logo-input">Logo (optional)</label>
+          <input type="file" id="logo-input" accept="image/*">
+        </div>
+
+        <div class="field" id="logo-size-field" hidden>
+          <label for="logo-size-input">Logo size: <span id="logo-size-value">22</span>%</label>
+          <input type="range" id="logo-size-input" min="10" max="30" value="22">
+        </div>
+
+        <div class="logo-preview-row" id="logo-preview-row" hidden>
+          <img id="logo-preview" alt="Logo preview">
+          <button type="button" class="btn btn-ghost btn-small" id="remove-logo-btn">Remove logo</button>
+        </div>
+
         <button type="submit" class="btn btn-primary" id="generate-btn">
           Generate QR Code
         </button>
